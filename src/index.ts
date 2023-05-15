@@ -4,10 +4,10 @@ async function main(){
     let version = "v1"
     let resource = "cards";
     let id = "3ED";
-    const res = await fetch(`https://api.magicthegathering.io/${version}/${resource}?types=Land&set=${id}`);
+    const res = await fetch(`https://api.magicthegathering.io/${version}/${resource}?colorIdentity=W&set=${id}`);
     console.log("getting all card sets.. ");
     const file = await res.text()
-    fs.writeFileSync("land", file);
+    fs.writeFileSync("white", file);
 }
 
 
